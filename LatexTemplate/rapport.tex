@@ -12,7 +12,7 @@
 
 \newcommand{\reporttitle}{LINGI1341: Réseaux informatiques}     % Titre
 \newcommand{\reportauthor}{Grégory \textsc{Vander Schueren}} % Auteur
-\newcommand{\reportsubject}{HTTP Analysis} % Sujet
+\newcommand{\reportsubject}{Analyse techcrunch.com} % Sujet
 \newcommand{\reportdate}{13 Novembre 2014} % Sujet
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \setlength{\parskip}{1ex} % Espace entre les paragraphes
@@ -34,5 +34,26 @@
 
   Fondé en juin 2005 par Michael Arrington, Techcrunch comptabilise 37 million de pages vues par mois. Racheté en septembre 2010 par AOL, Techcrunch compte aujourd'hui plus de 40 employés et ses bureaux sont situés à San Fransisco.\footnote{http://techcrunch.com/about/\#about-tc} Le montant du deal de rachat par AOL n'a pas été communiqué publiquement mais est estimé à \$40 millions. \footnote{http://www.businessinsider.com/aol-techcrunch-price-25-million-2010-9}
 
+  \section{Nombre de requêtes et durée}
+
+  Cette section présente quelques données récoltées lors de la récupération de la page d'acceuil de techcrunch.com. Cette récupération s'est fait avec les caches de fichiers et images du navigateur vides, aucun cookie, et le cache DNS vide. 
+
+  Une première constatation importante est que le nombre de requêtes éffectuées et le volume de données téléchargées varient fortement d'un test à l'autre. Ceci est probablement dû à des mécanismes d'AB-testing en place sur le site, mais également aux divers modules publicitaires qui sont chargés de manière aléatoire, et finalement aux alées. Les données listées ci-dessous sont donc des moyennes calculées sur 5 récupérations de la page d'acceuil. A côté de chaque moyenne, les valeurs min et max sont notées pour donner au lecteur une idée de la dispersion.
+
+  \begin{itemize}
+    \item 75 lookups DNS (65 ms).
+    \item 145 établisements de connection TCP (18 ms).
+    \item 275 requêtes HTTP(S) (163 ms).
+    \item 9 handshakes SSL (8 ms).
+    \item Latence de 143 ms.
+    \item Total de 177 KB envoyés, et 456 KB récupérés via requêtes HTTP(S).
+  \end{itemize}
+
+  \section{Domaines}
+
+  Les requêtes ont été éffectuées vers 59 domaines différents.
+  Majorité de régies publicitaires, outils analytiques, CDN.
+
+  Les ressources récupérées sont de 13 types MIME différents: application/javascript, application/json, application/x-javascript, application/x-shockwave-flash, font/woff, image/gif, image/jpeg, image/png, image/svg+xml, text/css, text/html, text/javascript, text/plain. 
 
 \end{document}
